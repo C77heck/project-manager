@@ -1,0 +1,340 @@
+/* GLOBAL SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    @media only screen and (max-width: 37.5em) {
+        font-size: 50%;
+    }
+    @media screen and (max-width: 68.75em) {
+        font-size: 58%;
+    }
+}
+
+h2 {
+    color: rgb(92, 91, 91);
+}
+
+p {
+    color: grey;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* error messages */
+
+.error {
+    color: red;
+}
+
+/* NAVIGATION BAR */
+
+.navbar {
+    display: flex;
+    height: 5rem;
+    position: fixed;
+    background-color: rgb(60, 65, 73);
+    color: white;
+    width: 100%;
+}
+
+.navbar__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.7rem;
+    width: 50%;
+    min-width: 57rem;
+}
+
+.navbar__list li {
+    list-style: none;
+}
+
+.navbar__list li a {
+    text-decoration: none;
+    color: white;
+    transition: all 450ms;
+}
+
+.navbar__list li a:hover {
+    color: #35c053;
+}
+
+.navbar__select {
+    width: 100%;
+}
+
+/* dropdown css */
+
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.dropbtn span {
+    transition: all 450ms;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 5rem;
+    background-color: rgb(60, 65, 73);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover span {
+    color: #35c053;
+}
+
+@media (max-width:37.5em) {
+    .navbar__list {
+        font-size: 1.2rem;
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width:24.5em) {
+    .navbar__list h3 {
+        display: none;
+    }
+}
+
+/* INDEX PAGE */
+
+.projects {
+    margin-top: 15rem;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    min-width: 50rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 37.5em) {
+    .projects {
+        width: 90%;
+        min-width: 0;
+        font-size: 1.2rem;
+    }
+}
+
+.projects__inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid rgb(189, 180, 180);
+    border-radius: 5px;
+}
+
+.projects__upper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.projects__lower {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn {
+    height: 3.5rem;
+    color: rgb(231, 231, 231);
+    border: none;
+    margin: 3rem .2rem .5rem;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 250ms;
+}
+
+.btn:active {
+    transform: translateY(2px);
+}
+
+.btn--delete {
+    width: 7rem;
+    background-color: rgb(204, 42, 42);
+}
+
+.btn--delete:hover {
+    background-color: rgb(196, 87, 87);
+    color: white;
+}
+
+.btn--edit, .btn--edit:link, .btn--edit:visited {
+    font-size: 1.5rem;
+    width: 10rem;
+    background-color: rgb(22, 67, 163);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.btn--edit:hover {
+    background-color: rgb(25, 106, 160);
+    color: white;
+}
+
+@media (max-width: 37.5em) {
+    .btn--delete {
+        font-size: 1.1rem;
+        width: 5rem;
+        height: 2.5rem;
+    }
+    .btn--edit, .btn--edit:link, .btn--edit:visited {
+        font-size: 1.2rem;
+        width: 7rem;
+        height: 2.5rem;
+    }
+}
+
+/* EDIT/NEW PROJECT SETTINGS */
+
+.form {
+    margin-top: 12rem;
+    width: 40%;
+    min-width: 40rem;
+}
+
+.form__inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__inner label {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+}
+
+.form__inner input {
+    font-size: 1.4rem;
+    height: 3rem;
+    padding: 0.5rem;
+    border: solid 1px grey;
+    border-radius: 5px;
+    color: grey;
+}
+
+.form__inner textarea {
+    font-size: 1.4rem;
+    padding: 0.3rem;
+    border: solid 1px grey;
+    border-radius: 5px;
+    color: grey;
+    font-family: sans-serif;
+    line-height: 1.5;
+}
+
+.form__inner button {
+    font-size: 1.4rem;
+    border-radius: 5px;
+    background-color: rgb(41, 84, 201);
+    color: rgb(228, 226, 226);
+    font-family: sans-serif;
+    transition: all 380ms;
+    border: none;
+    margin: 1rem 0;
+    width: 7rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+.form__inner button:hover {
+    background-color: rgb(86, 124, 226);
+    color: rgb(252, 249, 249);
+}
+
+select {
+    background-color: rgb(243, 241, 241);
+    height: 3rem;
+    color: rgb(117, 116, 116);
+    outline: none;
+    display: inline-block;
+    width: 40%;
+    border-radius: 5px;
+}
+
+/* PAGINATOR */
+
+.pagination {
+    display: flex;
+    font-size: 2rem;
+    list-style: none;
+    color: rgb(126, 143, 179);
+    margin: 5rem 0 10rem;
+}
+
+.pagination li {
+    border: solid 1px grey;
+    width: 15rem;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.pagination li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 550ms;
+    color: #3030d8;
+}
+
+.pagination li a:hover {
+    background-color: rgb(102 118 195);
+    color: white;
+}
+
+.page-link--disabled {
+    color: grey;
+}
